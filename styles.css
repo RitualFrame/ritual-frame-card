@@ -1,0 +1,119 @@
+:root {
+  color-scheme: dark;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #101010;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #101010;
+}
+
+.card-shell {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: clamp(0.75rem, 3vw, 2.5rem);
+}
+
+.card {
+  position: relative;
+  width: min(100%, 31rem);
+  aspect-ratio: 1080 / 1920;
+  overflow: hidden;
+  background: #101010;
+  box-shadow: 0 0.8rem 3rem rgb(0 0 0 / 0.45);
+}
+
+.artwork-crop,
+.artwork {
+  position: absolute;
+  inset: 0;
+}
+
+.artwork-crop {
+  overflow: hidden;
+}
+
+.artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.contact-links {
+  position: absolute;
+  inset: 0;
+}
+
+.contact-link {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 0.25rem;
+  color: transparent;
+  outline: none;
+}
+
+.contact-link span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* These three regions follow the contact columns in the original artwork. */
+.youtube {
+  left: 8%;
+  top: 54%;
+  width: 25%;
+  height: 14%;
+}
+
+.instagram {
+  left: 37.5%;
+  top: 54%;
+  width: 25%;
+  height: 14%;
+}
+
+.email {
+  left: 67%;
+  top: 54%;
+  width: 25%;
+  height: 14%;
+}
+
+.contact-link:hover {
+  background: rgb(255 255 255 / 0.07);
+}
+
+.contact-link:focus-visible {
+  background: rgb(255 255 255 / 0.1);
+  box-shadow: inset 0 0 0 2px #f3f0e7;
+}
+
+@media (max-height: 57rem) and (min-width: 38rem) {
+  .card-shell {
+    align-items: start;
+  }
+
+  .card {
+    width: min(100%, calc(100dvh * 0.5642));
+  }
+}
